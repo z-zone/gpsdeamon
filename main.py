@@ -1,7 +1,7 @@
 # main.py
 # authors: lukas, samuel
 
-# the config.py deinfes all the parameters
+# the config.py defines all the parameters
 import config
 # in the connect.py-module (connections) the different types of possible connections (gsm, wlan) are defined
 import connect
