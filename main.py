@@ -13,16 +13,17 @@ import gps
 
 # first, the gpsdeamon should decide, if it's the client or the server.
 # therefore it should check if the gps-module is installed -> client, or not -> server
-instType = "s"
+instType = true
 #if gps.isInstalled() == true:
-#    instType = "c"
+#    instType = false
 # for testing purposes, the installation type is specified by cmd-line argument, later on it should be decided by given modules
 instType = sys.argv[1]
 
 # in the parse.py-module (parse) the handling of data-string is defined either the client- or the server-way
 import parse
 # in the connect.py-module (connections) the different types of possible connections (gsm, wlan) are defined
-import connect
+import com
+com.communicate(instType)
 # in the talk.py-module the sending/recieving takes place
 import talk
 
