@@ -1,6 +1,11 @@
 # main.py
 # authors: lukas, samuel
 
+# General: sys to communicate with the command line
+import sys
+# General: socket to use the connection library
+import socket
+
 # the config.py defines all the parameters
 import config
 # in the gps.py-module the communication with the gps-module is defined
