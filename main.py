@@ -14,8 +14,10 @@ import gps
 # first, the gpsdeamon should decide, if it's the client or the server.
 # therefore it should check if the gps-module is installed -> client, or not -> server
 instType = "s"
-if gps.isInstalled() == true:
-    instType = "c"
+#if gps.isInstalled() == true:
+#    instType = "c"
+# for testing purposes, the installation type is specified by cmd-line argument, later on it should be decided by given modules
+instType = sys.argv[1]
 
 # in the parse.py-module (parse) the handling of data-string is defined either the client- or the server-way
 import parse
