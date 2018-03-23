@@ -1,11 +1,12 @@
 # connect.py
 # authors: lukas, samuel
 
-def communicate():
+# arg1 should tell if its a server-isntallation (true) oder client (false), arg2 is the ip/dns of server and arg3 is the message that should be sent
+def communicate(instType, *options):
     # define the specific length of a possible message
     msglen = 23
     # server version
-    if instType == "s":
+    if instType == true:
         handler = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         server_address = ('', 5112)
         handler.bind(server_address)
@@ -27,15 +28,15 @@ def communicate():
         finally:
             ssock.close()
     # client version
-    elif instType == "c":
+    elif instType == false:
+        serverdns = options[0]
+        msgstring = options[1]
         csock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         # specify the address of server - in final version the dyndnsname should be here, but not shown to everyone now
-        server_address = (sys.argv[2], 5112)
+        server_address = (serverdns, 5112)
         csock.connect(server_adress)
         try:
             # send data
-            # message just for testing set to argv[3]
-            msgstring = sys.argv[3]
             totalsent = 0
             while totalsent < msglen:
                 sent = csock.send(msgstring[totalsent:])
@@ -48,4 +49,4 @@ def communicate():
         
     # no version specified
     else
-        raise RuntimeError("Installation Type not specified")
+        raise RuntimeError("Installation Type not clear")
