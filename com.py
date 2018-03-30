@@ -1,4 +1,4 @@
-# connect.py
+# com.py
 # authors: lukas, samuel
 
 # arg1 should tell if its a server-isntallation (true) oder client (false), arg2 is the ip/dns of server and arg3 is the message that should be sent
