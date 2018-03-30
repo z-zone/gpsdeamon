@@ -12,7 +12,7 @@ def communicate(instType, *options):
         handler.bind(server_address)
         handler.listen(5)
         while 1:
-            ssock, client_address = handler.accept()
+            ssock, server_address = handler.accept()
         try:
             bytes_recd = 0
             buffers = []
@@ -35,6 +35,7 @@ def communicate(instType, *options):
         # specify the address of server - in final version the dyndnsname should be here, but not shown to everyone now
         server_address = (serverdns, 5112)
         csock.connect(server_adress)
+        print 'connection success'
         try:
             # send data
             totalsent = 0
